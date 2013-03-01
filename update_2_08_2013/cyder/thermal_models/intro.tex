@@ -1,0 +1,105 @@
+% Provide a summary of the work conducted:
+%      Describe the technical problem clearly
+%      support it with a method
+
+\begin{frame}[ctb!]
+\frametitle{Thermal Modeling in Cyder}
+Two types of thermal modeling occur in Cyder. 
+\begin{itemize}
+\item The first is \textbf{capacity estimation} for waste stream acceptance.
+\begin{itemize}
+\item It employs a \gls{STC} algorithm \cite{radel_effect_2007, radel_repository_2007} and
+\item relies on a supporting \textbf{response database} combining detailed 
+spent nuclear fuel composition data \cite{carter_fuel_2011} with a detailed 
+thermal repository performance analysis tool from \gls{LLNL} and the \gls{UFD} 
+campaign \cite{greenberg_application_2012}.  
+\end{itemize}
+\item The next is \textbf{heat evolution} which (optionally) determines heat evolution in 
+the modules over repository lifetime.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[ctb!]
+\frametitle{Thermal Modeling in Cyder}
+\begin{itemize}
+\item The \textbf{capacity estimation} method is capable of rapid estimation of 
+temperature increase near emplacement tunnels as a function of waste 
+composition, limiting radius, $r_{lim}$, waste package spacing, $S$, near field 
+thermal conductivity, $K_{th}$, and near field thermal diffusivity, 
+$\alpha_{th}$.
+
+\item The \textbf{heat evolution} in the modules includes a lumped parameter 
+model in addition to the \gls{STC} method.
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}[ctb!]
+\frametitle{Thermal Modeling in Cyder}
+\footnotesize{
+
+Waste conditioning is the process of packing a waste stream into an appropriate 
+waste form. A waste stream is accepted into the repository, if it meets thermal capacity requirements. 
+It is according to user specified waste form  
+pairings that Cyder loads discrete waste forms with discrete waste 
+stream contaminant vectors as depicted in Figure \ref{fig:ws_conditioning}.
+
+\begin{figure}[htbp!]
+\begin{center}
+\def\svgwidth{.5\textwidth}
+\input{./cyder/thermal_models/ws_conditioning.eps_tex}
+\end{center}
+\caption{Waste streams are conditioned into the appropriate waste form 
+according to user-specified pairings.}
+\label{fig:ws_conditioning}
+\end{figure}
+
+  }
+\end{frame}
+
+\begin{frame}[ctb!]
+\frametitle{Thermal Modeling in Cyder}
+\footnotesize{
+
+
+Waste packaging is the process of placing one or many waste forms into a 
+(typically metallic) containment package. Once the waste stream has been 
+conditioned into a waste form, that waste form Component is loaded into a waste 
+package Component, also according to allowed pairs dictated by the user, as 
+depicted in Figure \ref{fig:wf_packaging}.
+
+\begin{figure}[htbp!]
+\begin{center}
+\def\svgwidth{.5\textwidth}
+\input{./cyder/thermal_models/wf_packaging.eps_tex}
+\end{center}
+\caption{Waste forms are loaded into the appropriate waste package 
+according to user-specified pairings.}
+\label{fig:wf_packaging}
+\end{figure}
+  }
+\end{frame}
+
+\begin{frame}[ctb!]
+\frametitle{Thermal Modeling in Cyder}
+\footnotesize{
+
+Finally, the waste package is emplaced in a buffer component, which 
+contains many other waste packages, spaced evenly in a grid. The grid is 
+defined by the user input and depends on repository depth, $\Delta z$, waste 
+package spacing, $\Delta x$, and tunnel spacing, $\Delta y$ as in Figure 
+\ref{fig:repo_layout}.
+
+\begin{figure}[htbp!]
+\begin{center}
+\def\svgwidth{.5\textwidth}
+\input{./cyder/thermal_models/repo_layout.eps_tex}
+\end{center}
+\caption{The repository layout has a depth and a uniform package spacing.}
+\label{fig:repo_layout}
+\end{figure}
+
+  }
+\end{frame}

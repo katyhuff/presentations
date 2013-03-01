@@ -1,0 +1,99 @@
+
+\begin{frame}[ctb!]
+\frametitle{<++>}
+\footnotesize{
+<++>
+}
+\end{frame}
+
+\begin{frame}[ctb!]
+\frametitle{<++>}
+\footnotesize{
+<++>
+}
+\end{frame}
+
+
+\begin{frame}[ctb!]
+\frametitle{<++>}
+\footnotesize{
+<++>
+}
+\end{frame}
+
+
+The lumped heat capacitance model makes an analogy to electrical circuit by 
+reducing a thermal system into discrete lumps for an approximate solution of 
+transient heat transfer. Such an approximation is 
+appropriate when it can be assumed that the temperature gradient within each 
+lump is approximately uniform. The appropriateness of this approximation can be
+quantitatively expressed by comparison of the internal thermal resistance to the 
+external thermal resistance. The Biot number, 
+
+\begin{align}
+  Bi = \frac{hA}{k}
+  \label{biot}
+\end{align}
+indicates the relative speeds with which heat conducts within an object and 
+across the boundary of that object. If the Biot number is low $(<0.1)$, and 
+therefore conduction is faster within the object than at the boundary, the 
+assumption of a uniform internal temperature is appropriate and the lumped 
+parameter model may be expected to give a result within $5\%$ 
+error\cite{incropera_fundamentals_2006}. This assists in choosing the size of 
+distinct lumps within a conceptual model. 
+
+The lumped capacitance model can address multiple media and multiple heat
+transfer modes. The rate of heat transfer $\dot{q}\hspace{1mm}[Wm^{-2}K^{-1}s^{-1}]$ 
+through a circuit is simply given as the quotient of the temperature 
+difference and the sum of thermal resistances, $R_i [W\cdot K^{-1}]$,
+of the multiple lumps 
+
+\begin{align}
+  \dot{q} = \frac{\Delta T}{\sum _{i=0}^{N}R_i}.
+\end{align}
+
+By representing the various modes of heat transport (i.e. conduction, 
+convection, radiation, and mass transfer) with various expressions for 
+resistance, the lumped capacitance model provides a solution to the transient 
+problem described by the energy balance,
+
+\begin{align}
+  \left( \mbox{Energy added to body j in dt} \right) &= \left( \mbox{Heat 
+  out of adjacent bodies into body j} \right)\nonumber\\
+  c_j\rho_j V_j dT_j(t) &= \sum_{i=0}^{i=N}\left[\dot{q_{i,j}}\right]dt,
+\end{align}
+
+where $c_j\rho_jV_j$ is the total lumped thermal capacitance of the body.
+
+For example, in the case of a simple convective circuit between two bodies, $i$ 
+and $j$, the resistance of $j$ can be described as 
+\begin{align}
+  R_{conv} &= 1/hA
+  \intertext{such that}
+  c_j\rho_j V_j dT_j(t) &= \sum_{i=0}^{i=N}\left[ hA_j (T_i - T_j(t)) \right]dt.\\
+\end{align}
+
+A time constant appears under integration that describes the speed with which 
+the body $i$ changes temperature with respect to the maximum temperature change,
+
+\begin{align}
+  \int_{T_j=T_0}^{T_j(t)} 
+  \frac{dT_j(t)}{T_i-T_j}&=\frac{hA_j}{c_j\rho_jV_j}\int_0^t dt\\
+  -ln\frac{T_i-T_j(t)}{T_i-T_0}&=\frac{hA_j}{c_j\rho_jV_j}t\\
+  \frac{T_i-T_j(t)}{T_i-T_0}&= e^{-(hA_j/c_j\rho_jV_j)t}\\
+  \intertext{such that}
+  \frac{T_j(t)-T_i}{T_i-T_0}&= 1- e^{-t/\tau}\\
+  \intertext{where}
+  \tau &= \left( c_j\rho_jV_j/hA_j \right).
+\end{align}
+
+The time constant, $\tau$ is the time it takes for the body to change 
+$(1-(1/e))\%\Delta T$ and is equal to the product of the thermal capacitance and 
+thermal resistance of the body, $CR$, analogous to an electrical circuit.
+
+\cite{el-wakil_nuclear_1981} This is the case for all resistances, $R_i$ 
+representing modes of heat transfer. Thus, one can say, in general
+
+\begin{align}
+  \tau_j = c_j \rho_j V_j R_j.
+\end{align}
