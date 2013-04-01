@@ -5,7 +5,7 @@
 
 
 %\documentclass[11pt,handout]{beamer}
-\documentclass{beamer}
+\documentclass[9pt]{beamer}
 \usetheme[white]{Wisconsin}
 %\title[short title]{long title}
 \title[U.S. Nuclear Waste Policy]{U.S. Nuclear Waste Policy, A History}
@@ -30,7 +30,8 @@
 \newcommand{\SN}{S$_N$}%{S$_\text{N}$}%{$S_N$}%
 \DeclareMathOperator{\erf}{erf}
 
-
+%page numbers
+\setbeamertemplate{footline}[page number]
 %Those icons in the references are terrible looking
 \setbeamertemplate{bibliography item}[text]
 \begin{document}
@@ -53,13 +54,14 @@
 \frame{
   \titlepage
 }
+
+\section{Overview}
 %%--------------------------------%%
 \begin{frame}
   \frametitle{Outline}
-  \tableofcontents[part=1,pausesections]
+  \tableofcontents[currentsection]
 \end{frame}
 
-\section{Overview}
 \subsection{Waste Challenges}
 \include{overview_challenges}
 \subsection{Management Options}
