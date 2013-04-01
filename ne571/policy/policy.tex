@@ -2,6 +2,8 @@
 %     Created: Sun Mar 31 03:00 PM 2013 C
 % Last Change: Sun Mar 31 03:00 PM 2013 C
 %
+
+
 %\documentclass[11pt,handout]{beamer}
 \documentclass{beamer}
 \usetheme[white]{Wisconsin}
@@ -16,6 +18,17 @@
 %\institution[short name]{long name}
 \institute[UW-Madison]{University of Wisconsin-Madison}
 
+%\usepackage{bbding}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{booktabs} % nice rules for tables
+\usepackage{microtype} % if using PDF
+\usepackage{bigints}
+\newcommand{\units}[1] {\:\text{#1}}%
+\newcommand{\SN}{S$_N$}%{S$_\text{N}$}%{$S_N$}%
+\DeclareMathOperator{\erf}{erf}
 
 
 \begin{document}
@@ -46,18 +59,18 @@
 
 \section{Overview}
 \subsection{Waste Challenges}
-%\include{overview_challenges}
+\include{overview_challenges}
 \subsection{Management Options}
-%\include{overview_options}
+\include{overview_options}
 
 
 \section{History}
 \subsection{Pre-NWPA}
-%\include{history_early}
+\include{history_early}
 \subsection{NWPA}
-%\include{history_nwpa}
+\include{history_nwpa}
 \subsection{Yucca Mountain Project}
-%\include{history_yucca}
+\include{history_yucca}
 
 \section{Outlook}
 \subsection{BRC}
@@ -66,9 +79,6 @@
 \include{outlook_waste_conf}
 \subsection{Yucca Mountain License Application Proceedings}
 \include{outlook_yucca}
-
-
-
 
 
 \include{acks}
