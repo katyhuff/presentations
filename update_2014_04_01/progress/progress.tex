@@ -307,7 +307,6 @@
 \end{frame}
 
 
-
 % --------------------------------------------------------------
 \begin{frame}[fragile]
   \frametitle{Thermal Hydraulics Block}
@@ -344,27 +343,10 @@
 \end{frame}
 
 
+
 % --------------------------------------------------------------
-
 \begin{frame}[fragile]
-  \frametitle{Thermal Hydraulics Data Needs}
-\footnotesize{
-  \begin{align} 
-    \rho_{c} &= \mbox{ density, for each component c [$kg/m^3$]}\\
-    c_{p,c} &= \mbox{ specific heat capacity, for each component c [$J/m-K$]}\\
-    k_{c} &= \mbox{ thermal conductivity, for each component c [$J/m-K$]}\\
-    R_{th,c} &= \mbox{ thermal resistivity, for each component c }\\
-    . &\\\nonumber
-    . &\\\nonumber
-    . &\nonumber
-  \end{align}
-}
-\end{frame}
-% --------------------------------------------------------------
-
-
-\begin{frame}[fragile]
-  \frametitle{Thermal Hydraulics : Heat Transfer Models }
+  \frametitle{Lumped Parameter Heat Transfer}
 \footnotesize{
   \begin{align} 
     \frac{dT_{fuel}}{dt} &=  - |cond|_{cool} - |cond|_{mod} - |conv|_{cool} + |fission|\\
@@ -374,6 +356,24 @@
   \end{align}
 }
 \end{frame}
+
+% --------------------------------------------------------------
+\begin{frame}[fragile]
+  \frametitle{Thermal Hydraulics Data Needs}
+\footnotesize{
+  \begin{align} 
+    \rho_{c} &= \mbox{ density, for each component c }\\
+    c_{p,c} &= \mbox{ specific heat capacity, for each component c }\\
+    k_{c} &= \mbox{ thermal conductivity, for each component c }\\
+    R_{th,c} &= \mbox{ thermal resistivity, for each component c }\\
+    . &\\\nonumber
+    . &\\\nonumber
+    . &\nonumber
+  \end{align}
+}
+\end{frame}
+
+
 
 % --------------------------------------------------------------
 \begin{frame}[fragile]
@@ -444,10 +444,17 @@ the implicit effort.
 
 \end{frame}
 
-
 % --------------------------------------------------------------
 \begin{frame}[fragile]
   \frametitle{Coupling : MOOSE}
   One of the first steps to using MOOSE is building a mesh.
+  \begin{figure}[htbp!]
+    \begin{center}
+      \includegraphics[height=0.8\textheight]{./progress/bunny.eps}
+    \end{center}
+    \caption{A mesh is a computational data object that holds nodes, edges, and 
+    attributes}
+    \label{fig:radau_stability}
+  \end{figure}
 \end{frame}
 
