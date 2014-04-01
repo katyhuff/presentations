@@ -198,7 +198,8 @@
         6   &  $ 0.230 $  &  $ 3.01   $  &  $ 0.00066 $  &  $ 0.000273$  \\
         \hline
       \end{tabular}
-      \caption{Delayed neutron data Decay heat data, ANS/ANSI 5.1-1971 for $^{235}$U thermal fission.}
+      \caption{Delayed neutron data Decay heat data, $^{235}$U thermal fission. 
+    Lamarsh.}
       \label{tab:delayedneutrons}
     \end{table}
 
@@ -235,20 +236,46 @@
 % --------------------------------------------------------------
 
 \begin{frame}[fragile]
-  \frametitle{Neutronics Data : Reactivity Model}
+  \frametitle{Neutronics Data : Reactivity Coefficients}
     \begin{table}
-      \begin{tabular}{|l|c|c|}
+      \begin{tabular}{|l|c|c|c|}
         \hline
-        Component & $T_{0}$  &  $\frac{\partial\alpha}{\partial T}$\\
-                  & $[K]$    &  $[pcm/K]$ \\
+        Component & $T_{0}$  &  $T_0$ & $\frac{\partial\alpha}{\partial T}$\\
+                  & $[K]$    &  $[K]$ & $[pcm/K]$ \\
         \hline
-       \hline
+        fuel  & 730 & 1003.15 & -3.8 \\
+        cool  & 650 &  923.15 & -1.8 \\
+        mod   & 700 &  973.15 & -0.7 \\
+        refl  & 650 &  923.15 &  \textcolor{red}{1.8} \\
+        \hline
       \end{tabular}
-      \caption{Decay heat data, ANS/ANSI 5.1-1971 for $^{235}$U thermal fission.}
+      \caption{Temperature coefficients of reactivity for the PB-FHR Mk1. 
+      Cisneros.}
       \label{tab:decayheat}
     \end{table}
 
 \end{frame}
 
 % --------------------------------------------------------------
+
+\begin{frame}[fragile]
+  \frametitle{Neutronics Data : Reactivity Model}
+  \begin{align}
+    \rho_{ext} &= \left\{
+                  \begin{array}{l}
+                            0 \\
+                            \mbox{ ramp } \\
+                            \mbox{ pulse } \\
+                            \mbox{ prompt jump }\\
+                            \mbox{ control rod drop }\\
+                            \mbox{ . } \\
+                            \mbox{ . } \\
+                            \mbox{ . } \\
+                  \end{array}
+                  \right.
+  \end{align}
+\end{frame}
+
+% --------------------------------------------------------------
+
 
