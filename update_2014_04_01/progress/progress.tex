@@ -50,7 +50,7 @@
         .\\
         .\\
         .\\
-        \kappa_{k p} - \lambda_k\omega_{k}\\
+        \kappa_{k} p - \lambda_k\omega_{k}\\
         f(p, C_p^{fuel}, T_{fuel}, T_{cool},\cdots)\\
         g(C_p^{cool}, T_{fuel}, T_{cool},\cdots)\\
         .\\
@@ -103,7 +103,7 @@
         .\\
         .\\
         .\\
-        \kappa_{k p} - \lambda_k\omega_{k}\\
+        \kappa_{k} p - \lambda_k\omega_{k}\\
         f(p, C_p^{fuel}, T_{fuel}, T_{cool},\cdots)\\
         g(C_p^{cool}, T_{fuel}, T_{cool},\cdots)\\
         .\\
@@ -111,7 +111,7 @@
         .\\
       \end{array}
       \right]
-      \label{eqn:ourPRKE}
+      \label{eqn:note_rho_prke}
     \end{equation}
   
   }
@@ -156,7 +156,7 @@
         \kappa_{k}p - \lambda_k\omega_{k}\\
       \end{array}
       \right]
-      \label{eqn:ourPRKE}
+      \label{eqn:neutronics_prke}
     \end{equation}
   
   }
@@ -182,7 +182,7 @@
 \end{frame}
 % --------------------------------------------------------------
 \begin{frame}[fragile]
-  \frametitle{Neutronics Data : Delayed Neutron Model}
+  \frametitle{Neutronics : Delayed Neutron Model}
 
     \begin{table}
       \begin{tabular}{|l|c|c|c|c|}
@@ -207,7 +207,7 @@
 
 % --------------------------------------------------------------
 \begin{frame}[fragile]
-  \frametitle{Neutronics Data : Decay Heat Model}
+  \frametitle{Neutronics : Decay Heat Model}
     \begin{table}
       \begin{tabular}{|l|c|c|}
         \hline
@@ -236,7 +236,7 @@
 % --------------------------------------------------------------
 
 \begin{frame}[fragile]
-  \frametitle{Neutronics Data : Reactivity Coefficients}
+  \frametitle{Neutronics : Reactivity Coefficients}
     \begin{table}
       \begin{tabular}{|l|c|c|c|}
         \hline
@@ -259,7 +259,7 @@
 % --------------------------------------------------------------
 
 \begin{frame}[fragile]
-  \frametitle{Neutronics Data : Reactivity Model}
+  \frametitle{Neutronics : Reactivity Insertion Model}
   \begin{align}
     \rho_{ext} &= \left\{
                   \begin{array}{l}
@@ -277,5 +277,177 @@
 \end{frame}
 
 % --------------------------------------------------------------
+\begin{frame}[fragile]
+  \frametitle{Thermal Hydraulics Block}
+  \footnotesize{
+  \begin{equation} 
+  \frac{d}{dt}\left[
+    \begin{array}{c}
+      T_{fuel}\\
+      T_{cool}\\
+      .\\
+      .\\
+      .\\
+    \end{array}
+    \right]
+    =
+    \left[
+      \begin{array}{ c }
+        f(p, C_p^{fuel}, T_{fuel}, T_{cool},\cdots)\\
+        g(C_p^{cool}, T_{fuel}, T_{cool},\cdots)\\
+        .\\
+        .\\
+        .\\
+      \end{array}
+      \right]
+      \label{eqn:th_prke}
+    \end{equation}
+  
+  }
+\end{frame}
 
+
+
+% --------------------------------------------------------------
+\begin{frame}[fragile]
+  \frametitle{Thermal Hydraulics Block}
+  \footnotesize{
+  \begin{equation} 
+  \frac{d}{dt}\left[
+    \begin{array}{c}
+      T_{fuel} \\
+      T_{cool} \\
+      T_{mod} \\
+      T_{refl} \\
+    \end{array}
+    \right]
+    =
+    \left[
+      \begin{array}{ r }
+        f(p, C_p^{fuel}, \rho_{fuel}, T_{fuel}, C_p^{cool}, v_{cool}, T_{cool},\\ 
+          C_p^{mod}, T_{mod}, A_{fuel}, A_{mod}, \cdots )\\
+          \\
+        g(C_p^{fuel}, \rho_{fuel}, T_{fuel}, C_p^{cool}, v_{cool}, \rho_{cool},\\
+          T_{cool}, A_{fuel}, \cdots )\\
+          \\
+        m(C_p^{fuel}, \rho_{fuel}, T_{fuel}, C_p^{cool}, v_{cool}, \rho_{cool},T_{cool},\\
+         C_p^{mod}, \rho_{mod}, T_{mod}, A_{fuel}, A_{mod}, \cdots )\\
+        \\
+        r(C_p^{fuel}, \rho_{fuel}, T_{fuel}, C_p^{cool}, v_{cool}, \rho_{cool}, T_{cool},\\
+         C_p^{mod}, \rho_{mod}, T_{mod}, A_{fuel}, A_{mod}, \cdots )\\
+      \end{array}
+      \right]
+      \label{eqn:th_prke_fuller}
+    \end{equation}
+  
+  }
+\end{frame}
+
+
+% --------------------------------------------------------------
+
+\begin{frame}[fragile]
+  \frametitle{Thermal Hydraulics Data Needs}
+\footnotesize{
+  \begin{align} 
+    \rho_{c} &= \mbox{ density, for each component c [$kg/m^3$]}\\
+    c_{p,c} &= \mbox{ specific heat capacity, for each component c [$J/m-K$]}\\
+    k_{c} &= \mbox{ thermal conductivity, for each component c [$J/m-K$]}\\
+    R_{th,c} &= \mbox{ thermal resistivity, for each component c }\\
+    . &\\\nonumber
+    . &\\\nonumber
+    . &\nonumber
+  \end{align}
+}
+\end{frame}
+% --------------------------------------------------------------
+
+
+\begin{frame}[fragile]
+  \frametitle{Thermal Hydraulics : Heat Transfer Models }
+\footnotesize{
+  \begin{align} 
+    \frac{dT_{fuel}}{dt} &=  - |cond|_{cool} - |cond|_{mod} - |conv|_{cool} + |fission|\\
+    \frac{dT_{cool}}{dt} &=  + |cond|_{fuel} - |conv|_{cool} - |conv|_{refl} \\
+    \frac{dT_{mod}}{dt}  &=  + |cond|_{fuel}\\
+    \frac{dT_{refl}}{dt} &=  + |cond|_{cool}
+  \end{align}
+}
+\end{frame}
+
+% --------------------------------------------------------------
+\begin{frame}[fragile]
+  \frametitle{Coupling : Operator Splitting}
+  Here, we treat neutronics and thermal hydraulics separately at 
+  each time step with \textbf{forward Euler}. The values for $T_{fuel}$, 
+  $T_{cool}$, $T_{mod}$, and $T_{refl}$ at time $t_n$ 
+  are passed between physics subblocks, and the process is repeated.
+  \footnotesize{
+  \begin{align} 
+    U^n &= \left[
+                  \begin{array}{ c }
+                    N^n\\
+                    T^n\\
+                  \end{array}
+                  \right]\\
+    N^{n+1} &= N^n + kf(U^n)\\
+    \nonumber\\
+    U^* &= \left[
+                  \begin{array}{ c }
+                    N^{n+1}\\
+                    T^n\\
+                  \end{array}
+                  \right]\\
+    T^{n+1} &= T^n + kf(U^*)
+  \end{align}
+  }
+\end{frame}
+
+% --------------------------------------------------------------
+\begin{frame}[fragile]
+  \frametitle{Coupling : Explicit Method Stability}
+  \begin{figure}[htbp!]
+    \begin{center}
+      \includegraphics{euler.eps}
+    \end{center}
+    \caption{In addition to the loss of nonlinear residuals in the operator 
+    splitting technique, the small stability region of explicit Runge-Kutta methods is 
+  a drawback.}
+    \label{fig:euler_stability}
+  \end{figure}
+
+\end{frame}
+
+% --------------------------------------------------------------
+\begin{frame}[fragile]
+  \frametitle{Coupling : Implicit Method Stability}
+  \begin{figure}[htbp!]
+    \begin{center}
+      \includegraphics{radau.eps}
+    \end{center}
+    \caption{Implicit Runge-Kutta methods, however, can be more stable. RadauII-5, for example, has a large stability region.}
+    \label{fig:euler_stability}
+  \end{figure}
+
+\end{frame}
+
+
+% --------------------------------------------------------------
+\begin{frame}[fragile]
+  \frametitle{Coupling : Jacobian}
+BUT, recasting the whole problem into a Newton's solve for implicit Runge-Kutta
+requires calculation of the Jacobian matrix. Direct computation of the (22x22)
+Jacobian is inherently complex. 
+
+However, Jacobian Free Newton-Krylov solves this. So, MOOSE will be used for
+the implicit effort.
+
+\end{frame}
+
+
+% --------------------------------------------------------------
+\begin{frame}[fragile]
+  \frametitle{Coupling : MOOSE}
+  One of the first steps to using MOOSE is building a mesh.
+\end{frame}
 
