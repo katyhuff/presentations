@@ -1,3 +1,4 @@
+
 % --------------------------------------------------------------
 \begin{frame}[fragile]
   \frametitle{Recent Progress}
@@ -8,3 +9,111 @@
     \item 3-D Mesh Development
   \end{itemize}
 \end{frame}
+
+% --------------------------------------------------------------
+\begin{frame}[fragile]
+  \frametitle{Coupled Kinetics}
+  \footnotesize{
+\begin{equation} 
+  \frac{d}{dt}\left[
+    \begin{array}{c}
+      p\\
+      \zeta_1\\
+      .\\
+      .\\
+      .\\
+      \zeta_J\\
+      \omega_1\\
+      .\\
+      .\\
+      .\\
+      \omega_K\\
+      T_{fuel}\\
+      T_{cool}\\
+      .\\
+      .\\
+      .\\
+    \end{array}
+    \right]
+    =
+    \left[
+      \begin{array}{ c }
+        \frac{\rho(t,T_{fuel},T_{cool},\cdots)-\beta}{\Lambda}p + 
+        \displaystyle\sum^{j=J}_{j=1}\lambda_j\zeta_j\\
+        \frac{\beta_1}{\Lambda} p - \lambda_1\zeta_1\\
+        .\\
+        .\\
+        .\\
+        \frac{\beta_J}{\Lambda}p-\lambda_J\zeta_J\\
+        \kappa_1p - \lambda_1\omega_1\\
+        .\\
+        .\\
+        .\\
+        \kappa_{k p} - \lambda_k\omega_{k}\\
+        f(p, C_p^{fuel}, T_{fuel}, T_{cool},\cdots)\\
+        g(C_p^{cool}, T_{fuel}, T_{cool},\cdots)\\
+        .\\
+        .\\
+        .\\
+      \end{array}
+      \right]
+      \label{eqn:ourPRKE}
+    \end{equation}
+  
+  }
+\end{frame}
+
+
+% --------------------------------------------------------------
+\begin{frame}[fragile]
+  \frametitle{Coupled Kinetics}
+  \footnotesize{
+\begin{equation} 
+  \frac{d}{dt}\left[
+    \begin{array}{c}
+      p\\
+      \zeta_1\\
+      .\\
+      .\\
+      .\\
+      \zeta_J\\
+      \omega_1\\
+      .\\
+      .\\
+      .\\
+      \omega_K\\
+      \textcolor{red}{T_{fuel}}\\
+      \textcolor{red}{T_{cool}}\\
+      .\\
+      .\\
+      .\\
+    \end{array}
+    \right]
+    =
+    \left[
+      \begin{array}{ c }
+        \frac{\textcolor{red}{\rho(t,T_{fuel},T_{cool},\cdots)}-\beta}{\Lambda}p + 
+        \displaystyle\sum^{j=J}_{j=1}\lambda_j\zeta_j\\
+        \frac{\beta_1}{\Lambda} p - \lambda_1\zeta_1\\
+        .\\
+        .\\
+        .\\
+        \frac{\beta_J}{\Lambda}p-\lambda_J\zeta_J\\
+        \kappa_1p - \lambda_1\omega_1\\
+        .\\
+        .\\
+        .\\
+        \kappa_{k p} - \lambda_k\omega_{k}\\
+        f(p, C_p^{fuel}, T_{fuel}, T_{cool},\cdots)\\
+        g(C_p^{cool}, T_{fuel}, T_{cool},\cdots)\\
+        .\\
+        .\\
+        .\\
+      \end{array}
+      \right]
+      \label{eqn:ourPRKE}
+    \end{equation}
+  
+  }
+\end{frame}
+
