@@ -38,22 +38,25 @@
 \setcounter{secnumdepth}{-1}
 \usetheme{Amsterdam}
 
+%% Get a pagenumber?
+\expandafter\def\expandafter\insertshorttitle\expandafter{%
+  \insertshorttitle\hfill%
+  \insertframenumber\,/\,\inserttotalframenumber}
 
 \usepackage{tikz}
 
 % --------------------------------------------------------------
 \begin{document}
 \title{Update On ATWS Studies}
-\author[Kathryn D. Huff]{\includegraphics[height=2cm]{bk}\\Kathryn D.  Huff}
+\author[Kathryn D. Huff]{\includegraphics[height=2cm]{bk}\\Kathryn D. Huff}
 \maketitle
 
-\section{Motivation}
+\section{Background}
 \input{motivation/motivation}
-\section{Previous Work}
 \input{priorart/priorart}
-\section{Approach}
+\section{0D Model Progress}
 \input{approach/approach}
-\section{Progress}
-\input{progress/progress}
-
+\input{progress/prke}
+\section{3D Model Progress}
+\input{progress/moose}
 \end{document}
