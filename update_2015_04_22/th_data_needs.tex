@@ -1,0 +1,61 @@
+% This holds a table for the th data needs
+
+\begin{table}[ht!]
+\centering
+\begin{tabularx}{\textwidth}{|c|l|X|c|r|}
+\multicolumn{5}{c}{\textbf{Mk1-PB-FHR TH Design Parameters}}\\
+\hline
+\textbf{Symbol} & \textbf{Meaning} & \textbf{Value} & \textbf{Units} & \textbf{Source} \\
+\hline
+$N_p$ & Number of Pebbles & $4.7\times10^5 $ & $[-]$ & \cite{andreades_technical_2014} \\
+$N_{rp}$ & Number of Reflector Pebbles & $2.18\times10^5 $ & $[-]$ & \cite{andreades_technical_2014} \\
+$r_m$ & Moderator Radius & $0.0125$ & $[m]$ & \cite{andreades_technical_2014} \\
+$r_f$ & Fuel Radius & $0.014$ & $[m]$ & \cite{andreades_technical_2014} \\
+$r_s$ & Shell Radius & $0.015$ & $[m]$ & \cite{andreades_technical_2014} \\
+$V_m$ & Moderator Volume & $3.8451785083$ & $[m^3]$ & [-] \\
+$V_f$ & Fuel Volume & $1.55702044301$ & $[m^3]$ & [-] \\
+$V_c$ & Coolant Volume & $7.2$ & $[m^3]$ & \cite{andreades_technical_2014} \\
+$V_{or}$ & Outer Reflector Volume & $24.89080459770115$ & $[m^3]$ & \cite{andreades_technical_2014} \\
+$V_{ir}$ & Inner Reflector Volume & $3.413793103448276$ & $[m^3]$ & \cite{andreades_technical_2014} \\
+$V_{rp}$ & Reflector Pebble Volume & $3.08190239317$ & $[m^3]$ & \cite{andreades_technical_2014} \\
+$A_{cr}$ & Reflector Surface Area& $804.87603785$ & $[m^2]$ & [-]\\
+$m_{or}$ & Outer Reflector Mass & $4.3310\times 10^4$ & $[kg]$ & \cite{andreades_technical_2014} \\
+$m_{ir}$ & Inner Reflector Mass & $5.940\times 10^3$ & $[kg]$ & \cite{andreades_technical_2014} \\
+$k_m$ & Moderator Thermal Conductivity & $0.26$ (for firebrick) & $[\frac{J}{s\cdot m\cdot K}]$ & \cite{andreades_technical_2014} \\
+$k_c$ & Coolant Thermal Conductivity & $1.0$ & $[\frac{J}{s\cdot m\cdot K}]$ & \cite{gierszewski_property_1980,andreades_technical_2014} \\
+$k_f$ & Fuel Thermal Conductivity & $<+val+>$ & $[\frac{J}{s\cdot m\cdot K}]$ & \cite{<+ref+>} \\
+$k_{r,eff}$ & Reflector Thermal Conductivity & $0.26$ & $[\frac{J}{s\cdot m\cdot K}]$ & \cite{andreades_technical_2014} \\
+$\rho_m$ & Moderator Density & $1.740\times10^3$ & $[\frac{kg}{m^3}]$ & \cite{andreades_technical_2014} \\
+$\rho_f$ & Fuel Density & $1.740\times10^3$ & $[\frac{kg}{m^3}]$ & \cite{andreades_technical_2014} \\
+$\rho_f$ & Shell Density & $1.767\times10^3$ & $[\frac{kg}{m^3}]$ & \cite{andreades_technical_2014} \\
+$\rho_c$ & Coolant Density & $2330.-0.42T$& $[\frac{kg}{m^3}]$ & \cite{gierszewski_property_1980}\\
+$\rho_r$ & Reflector Density & $1.740\times10^3$ & $[\frac{kg}{m^3}]$ & \cite{andreades_technical_2014} \\
+$c_{p,m}$ & Moderator Specific Heat Capacity & $684$ & $[\frac{J}{kg\cdot K}]$ & \cite{snead_thermal_1995} \\
+$c_{p,f}$ & Fuel Specific Heat Capacity & $<+val+>$ & $[\frac{J}{kg\cdot K}]$ & \cite{<+ref+>} \\
+$c_{p,c}$ & Coolant Specific Heat Capacity & $2380$ & $[\frac{J}{kg\cdot K}]$ & \cite{gierszewski_property_1980}\\
+$c_{p,r}$ & Reflector Specific Heat Capacity & $684$ & $[\frac{J}{kg\cdot K}]$ & \cite{snead_thermal_1995} \\
+$h_f$ & Pebble Bed Heat Transfer Coefficient & $4700$ & $[\frac{J}{s \cdot m^2\cdot K}]$ & \cite{andreades_technical_2014} \\
+$h_r$ & Reflector Heat Transfer Coefficient & $<+val+>$ & $[\frac{J}{s \cdot m^2\cdot K}]$ & \cite{<+ref+>} \\
+$\dot{m}$ & Coolant Mass Flow Rate & $976$ & $[\frac{kg}{s}]$ & \cite{andreades_technical_2014} \\
+$T_{in}$ & Inlet Temperature & $873.15$ & $[K]$ & \cite{andreades_technical_2014} \\
+$L_{r,eff}$ & Reflector Effective Length Constant & $<+val+>$ & $[m]$ & \cite{<+ref+>} \\
+%$<+param+>$ & <+name+> & $<+val+>$ & $[<+units+>]$ & \cite{<+ref+>} \\
+\hline
+\end{tabularx}
+\caption{<+Caption text+>}
+\label{tab:th_data_needs}
+\end{table}
+
+% note that you're not really succeeding in taking care of the graphite pebbles 
+% in the graphite reflector component.
+% It would be better to say V_r = V_{or} + V_{ir} + V_{rp}
+
+% FLiBe, yousry gohar.
+% 
+% Melting point, °C 459.1
+% Thermal conductivity, W/cm. °C 0.010
+% Viscosity, centipoises 0.116 exp [3755/T(°k)]
+% Electrical conductivity at 500 , ohm-1cm-1 9.2 10-3
+% Heat capacity, cal/g. °C 0.57
+% Density, g/cm3 2.214 - 4.2 x 10-4 T(°C)
+% from ORNL rho(g/cm ) = 2.2797 - 4.884 x 10^{-4} T, (C). 

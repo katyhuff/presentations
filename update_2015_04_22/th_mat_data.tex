@@ -1,0 +1,46 @@
+% This holds a table for the th data needs
+
+\begin{table}[ht!]
+\centering
+\begin{tabularx}{\textwidth}{|c|l|X|c|r|}
+\multicolumn{5}{c}{\textbf{Mk1-PB-FHR TH Material Data}}\\
+\hline
+\textbf{Symbol} & \textbf{Meaning} & \textbf{Value} & \textbf{Units} & \textbf{Ref.} \\
+\hline
+$m_{or}$ & Outer Refl. Mass & $4.3310\times 10^4$ & $[kg]$ & \cite{andreades_technical_2014} \\
+$m_{ir}$ & Inner Refl. Mass & $5.940\times 10^3$ & $[kg]$ & \cite{andreades_technical_2014} \\
+$k_m$ & Mod. Thermal Cond. & $0.26$ & $[\frac{J}{s\cdot m\cdot K}]$ & \cite{andreades_technical_2014} \\
+$k_c$ & Cool. Thermal Cond. & $1.0$ & $[\frac{J}{s\cdot m\cdot K}]$ & \cite{gierszewski_property_1980,andreades_technical_2014} \\
+$k_f$ & Fuel Thermal Cond. & $1.0$ & $[\frac{J}{s\cdot m\cdot K}]$ & [need] \\
+$k_{r,eff}$ & Refl. Thermal Cond. & $0.26$ & $[\frac{J}{s\cdot m\cdot K}]$ & \cite{andreades_technical_2014} \\
+$\rho_m$ & Mod. Density & $1.740\times10^3$ & $[\frac{kg}{m^3}]$ & \cite{andreades_technical_2014} \\
+$\rho_f$ & Fuel Density & $1.740\times10^3$ & $[\frac{kg}{m^3}]$ & \cite{andreades_technical_2014} \\
+$\rho_c$ & Cool. Density & $2330.-0.42T$& $[\frac{kg}{m^3}]$ & \cite{gierszewski_property_1980}\\
+$\rho_r$ & Refl. Density & $1.740\times10^3$ & $[\frac{kg}{m^3}]$ & \cite{andreades_technical_2014} \\
+$c_{p,m}$ & Mod. Spec. Heat Cap. & $684$ & $[\frac{J}{kg\cdot K}]$ & \cite{snead_thermal_1995} \\
+$c_{p,f}$ & Fuel Spec. Heat Cap. & $1744$ & $[\frac{J}{kg\cdot K}]$ & [R.O.S.] \\
+$c_{p,c}$ & Cool. Spec. Heat Cap. & $2380$ & $[\frac{J}{kg\cdot K}]$ & \cite{gierszewski_property_1980}\\
+$c_{p,r}$ & Refl. Spec. Heat Cap. & $684$ & $[\frac{J}{kg\cdot K}]$ & \cite{snead_thermal_1995} \\
+$h_f$ & Fuel Heat Trans. Coeff. & $4700$ & $[\frac{J}{s \cdot m^2\cdot K}]$ & \cite{andreades_technical_2014} \\
+$h_r$ & Refl. Heat Trans. Coeff. & need & $[\frac{J}{s \cdot m^2\cdot K}]$ & [need] \\
+$\dot{m}$ & Cool. Mass Flow Rate & $976$ & $[\frac{kg}{s}]$ & \cite{andreades_technical_2014} \\
+%$<+param+>$ & <+name+> & $<+val+>$ & $[<+units+>]$ & \cite{<+ref+>} \\
+\hline
+\end{tabularx}
+\caption{Data needs for TH.}
+\label{tab:th_mat_data}
+\end{table}
+
+% note that you're not really succeeding in taking care of the graphite pebbles 
+% in the graphite reflector component.
+% It would be better to say V_r = V_{or} + V_{ir} + V_{rp}
+
+% FLiBe, yousry gohar.
+% 
+% Melting point, °C 459.1
+% Thermal conductivity, W/cm. °C 0.010
+% Viscosity, centipoises 0.116 exp [3755/T(°k)]
+% Electrical conductivity at 500 , ohm-1cm-1 9.2 10-3
+% Heat capacity, cal/g. °C 0.57
+% Density, g/cm3 2.214 - 4.2 x 10-4 T(°C)
+% from ORNL rho(g/cm ) = 2.2797 - 4.884 x 10^{-4} T, (C). 

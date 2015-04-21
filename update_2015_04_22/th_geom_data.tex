@@ -1,0 +1,43 @@
+% This holds a table for the th data needs
+
+\begin{table}[ht!]
+\centering
+\begin{tabularx}{\textwidth}{|c|l|X|c|r|}
+\multicolumn{5}{c}{\textbf{Mk1-PB-FHR TH Geometry Data}}\\
+\hline
+\textbf{Symbol} & \textbf{Meaning} & \textbf{Value} & \textbf{Units} & \textbf{Ref.} \\
+\hline
+$N_p$ & N Pebbles & $4.7\times10^5 $ & $[-]$ & \cite{andreades_technical_2014} \\
+$N_{rp}$ & N Reflector Pebbles & $2.18\times10^5 $ & $[-]$ & \cite{andreades_technical_2014} \\
+$r_m$ & Mod. Radius & $0.0125$ & $[m]$ & \cite{andreades_technical_2014} \\
+$r_f$ & Fuel Radius & $0.014$ & $[m]$ & \cite{andreades_technical_2014} \\
+$r_s$ & Shell Radius & $0.015$ & $[m]$ & \cite{andreades_technical_2014} \\
+$V_m$ & Mod. Volume & $3.8451785083$ & $[m^3]$ & [-] \\
+$V_f$ & Fuel Volume & $1.55702044301$ & $[m^3]$ & [-] \\
+$V_c$ & Cool. Volume & $7.2$ & $[m^3]$ & \cite{andreades_technical_2014} \\
+$V_{or}$ & Outer Refl. Volume & $24.89080459770115$ & $[m^3]$ & \cite{andreades_technical_2014} \\
+$V_{ir}$ & Inner Refl. Volume & $3.413793103448276$ & $[m^3]$ & \cite{andreades_technical_2014} \\
+$V_{rp}$ & Refl. Pebble Volume & $3.08190239317$ & $[m^3]$ & \cite{andreades_technical_2014} \\
+$A_{cr}$ & Refl. Surface Area& $804.87603785$ & $[m^2]$ & [-]\\
+$T_{in}$ & Inlet Temperature & $873.15$ & $[K]$ & \cite{andreades_technical_2014} \\
+$L_{r,eff}$ & Refl. Length Const. & $2.5$ & $[m]$ & \cite{andreades_technical_2014} \\
+%$<+param+>$ & <+name+> & $<+val+>$ & $[<+units+>]$ & \cite{<+ref+>} \\
+\hline
+\end{tabularx}
+\caption{Data Needs for TH}
+\label{tab:th_geom_data}
+\end{table}
+
+% note that you're not really succeeding in taking care of the graphite pebbles 
+% in the graphite reflector component.
+% It would be better to say V_r = V_{or} + V_{ir} + V_{rp}
+
+% FLiBe, yousry gohar.
+% 
+% Melting point, °C 459.1
+% Thermal conductivity, W/cm. °C 0.010
+% Viscosity, centipoises 0.116 exp [3755/T(°k)]
+% Electrical conductivity at 500 , ohm-1cm-1 9.2 10-3
+% Heat capacity, cal/g. °C 0.57
+% Density, g/cm3 2.214 - 4.2 x 10-4 T(°C)
+% from ORNL rho(g/cm ) = 2.2797 - 4.884 x 10^{-4} T, (C). 
