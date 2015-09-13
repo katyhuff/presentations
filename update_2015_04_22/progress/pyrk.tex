@@ -19,7 +19,7 @@ A steady state analysis with PyRK gives initial temperatures.
     \begin{center}
       \includegraphics[height=0.7\textheight]{./progress/ss_w_o_feedbacks.eps}
     \end{center}
-    \caption{Steady-State solution, four components (fuel kernels, moderating 
+    \caption{Steady-State solution, four components (fuel kernels, moderating
     graphite, reflectors, and coolant).}
     \label{fig:ss_w_o_feedbacks}
   \end{figure}
@@ -63,11 +63,13 @@ system. For an insertion of $\rho$ :
 \begin{frame}[fragile]
   \frametitle{Quality Control}
   \begin{itemize}
-    \item Unit Checking (github.com/pint)
-    \item GitHub (github.com/pyrk/pyrk)
-    \item Automated Documentation (pyrk.github.io)
-    \item Test Suite (nosetests)
-    \item Continuous Integration (travis-ci.org/pyrk/pyrk)
+    \item Unit Checking: Pint (github.com/pint)
+    \item Version Control: Git & GitHub (github.com/pyrk/pyrk)
+    \item Automated Documentation: Sphinx (pyrk.github.io)
+    \item Test Suite: nose
+    \item Continuous Integration: Travis (travis-ci.org/pyrk/pyrk)
+    \item Plotting: Matplotlib
+    \item ODE solves: SciPy
   \end{itemize}
 \end{frame}
 
@@ -78,8 +80,8 @@ system. For an insertion of $\rho$ :
     \begin{center}
       \includegraphics[height=0.7\textheight]{./progress/pint_pyrk.png}
     \end{center}
-    \caption{In PyRK, the Pint package (pint.readthedocs.org/en/0.6/) is used 
-    keeping track of units, converting between them, and throwing errors when 
+    \caption{In PyRK, the Pint package (pint.readthedocs.org/en/0.6/) is used
+    keeping track of units, converting between them, and throwing errors when
     unit conversversions are not sane.}
     \label{fig:doc_pyrk}
   \end{figure}
@@ -91,8 +93,8 @@ system. For an insertion of $\rho$ :
     \begin{center}
       \includegraphics[height=0.7\textheight]{./progress/github_pyrk.png}
     \end{center}
-    \caption{Keeping track of versions of the code makes it possible to 
-    experiment without fear and placing the code online encourages use and 
+    \caption{Keeping track of versions of the code makes it possible to
+    experiment without fear and placing the code online encourages use and
     collaboration.}
     \label{fig:doc_pyrk}
   \end{figure}
@@ -131,7 +133,7 @@ system. For an insertion of $\rho$ :
       \includegraphics[height=0.7\textheight]{./progress/tests_pyrk.png}
     \end{center}
     \caption{The classes and functions that make up the code are tested individually for
-   robustness.} 
+   robustness.}
     \label{fig:tests_pyrk}
   \end{figure}
 \end{frame}
@@ -143,9 +145,9 @@ system. For an insertion of $\rho$ :
     \begin{center}
     \includegraphics[height=0.6\textheight]{./progress/travis_pyrk.png}
     \end{center}
-    \caption{The tests are run every time a change is made to the repository 
-    online. The results are public. If a main branch has a failed test, I get 
-    an email.} 
+    \caption{The tests are run every time a change is made to the repository
+    online. The results are public. If a main branch has a failed test, I get
+    an email.}
     \label{fig:tests_pyrk}
   \end{figure}
 \end{frame}
@@ -157,14 +159,14 @@ system. For an insertion of $\rho$ :
 PyRK is object oriented and modular. The important object classes in PyRK are:
 \begin{itemize}
 \item \textbf{SimInfo} Reads the input file, manages the solution matrix, Timer, and communication between neutronics and thermal hydraulics.
-\item \textbf{Neutronics} : calculates $dP/dt$, $d\omega_j/dt$, based on 
+\item \textbf{Neutronics} : calculates $dP/dt$, $d\omega_j/dt$, based on
 $dT_i/dt$ and the external reactivity insertion.
-\item \textbf{THSystem} : manages various THComponents, facilitates their 
+\item \textbf{THSystem} : manages various THComponents, facilitates their
 communication.
-\item \textbf{THComponent} : Conducts lumped parameter calculation. Other 
+\item \textbf{THComponent} : Conducts lumped parameter calculation. Other
 thermal models can inherit from it and replace it in the simulation.
-\item \textbf{Material} : A class for defining the intensive properties of a 
-material ($c_p$, $\rho$, $k_{th}$). Subclasses include \textbf{Flibe, 
+\item \textbf{Material} : A class for defining the intensive properties of a
+material ($c_p$, $\rho$, $k_{th}$). Subclasses include \textbf{Flibe,
 Graphite,} and \textbf{Kernel}.
 \end{itemize}
 }
@@ -192,18 +194,18 @@ Graphite,} and \textbf{Kernel}.
     \begin{center}
       \includegraphics[width=0.95\textwidth]{./progress/ri.png}
     \end{center}
-    \caption{The reactivity insertion that drives the simulator can be selected 
+    \caption{The reactivity insertion that drives the simulator can be selected
     and customized from three models.  }
     \label{fig:ri}
   \end{figure}
-  
+
 \end{frame}
 
 % --------------------------------------------------------------
 \begin{frame}[fragile]
   \frametitle{Thermal Hydraulics System}
   \footnotesize{
-  \begin{equation} 
+  \begin{equation}
   \frac{d}{dt}\left[
     \begin{array}{c}
       T_{fuel} \\
@@ -215,7 +217,7 @@ Graphite,} and \textbf{Kernel}.
     =
     \left[
       \begin{array}{ r }
-        f(p, C_p^{fuel}, \rho_{fuel}, T_{fuel}, C_p^{cool}, v_{cool}, T_{cool},\\ 
+        f(p, C_p^{fuel}, \rho_{fuel}, T_{fuel}, C_p^{cool}, v_{cool}, T_{cool},\\
           C_p^{mod}, T_{mod}, A_{fuel}, A_{mod}, \cdots )\\
           \\
         g(C_p^{fuel}, \rho_{fuel}, T_{fuel}, C_p^{cool}, v_{cool}, \rho_{cool},\\
@@ -230,7 +232,7 @@ Graphite,} and \textbf{Kernel}.
       \right]
       \label{eqn:th_prke_fuller}
     \end{equation}
-  
+
   }
 \end{frame}
 
@@ -267,7 +269,7 @@ R_{th} &= \mbox{thermal resistence of the component }[K \cdot s \cdot J^{-1}].
 \begin{frame}[fragile]
   \frametitle{Lumped Parameter Heat Transfer}
 \footnotesize{
-  \begin{align} 
+  \begin{align}
     \frac{dT_{fuel}}{dT} &=  - dT_{cond,cool} - dT_{cond,mod} - dT_{conv,cool} + dT+{fission}\\
     \frac{dT_{cool}}{dT} &=  + dT_{conv,mod} - dT_{conv,refl} \\
     \frac{dT_{mod}}{dT}  &=  + dT_{cond,fuel}\\
@@ -287,8 +289,8 @@ R_{th} &= \mbox{thermal resistence of the component }[K \cdot s \cdot J^{-1}].
 \label{dTfdt}
 \end{align}
 
-Here, the surface area between the matrix graphite and the fuel is the set of 
-$N_pN_T$ shells of radius $r_T$.  Additionally, the volume is the sum of 
+Here, the surface area between the matrix graphite and the fuel is the set of
+$N_pN_T$ shells of radius $r_T$.  Additionally, the volume is the sum of
 $N_PN_T$ spherical volumes of radius $r_T$.
 
 \begin{align}
@@ -300,6 +302,154 @@ R_{th,FS} &= \frac{r_F}{k_FA_{FS}}\\
           &= \frac{1}{4\pi N_pr_Sk_F}
 \end{align}
 }
+\end{frame}
+
+
+
+% --------------------------------------------------------------
+\begin{frame}[fragile]
+\frametitle{Adding Components}
+  \begin{figure}[htbp!]
+    \begin{center}
+      \includegraphics[height=0.7\textheight]{./progress/add_components.png}
+    \end{center}
+    \caption{Components are added in the input file and rely on the available
+    (small) library of material classes.}
+    \label{fig:ss_w_o_feedbacks}
+  \end{figure}
+\end{frame}
+
+% --------------------------------------------------------------
+\begin{frame}[fragile]
+\frametitle{Connecting Components}
+  \begin{figure}[htbp!]
+    \begin{center}
+      \includegraphics[height=0.7\textheight]{./progress/add_interfaces.png}
+    \end{center}
+    \caption{Connections between thermal components are added in the input
+    file.}
+    \label{fig:ss_w_o_feedbacks}
+  \end{figure}
+\end{frame}
+
+
+
+% --------------------------------------------------------------
+\begin{frame}[fragile]
+\frametitle{Running a Steady State Simulation}
+\input{./pebble/pebble_components}
+\end{frame}
+
+% --------------------------------------------------------------
+\begin{frame}[fragile]
+\frametitle{Running a Steady State Simulation}
+  \begin{figure}[htbp!]
+    \begin{center}
+      \includegraphics[height=0.7\textheight]{./progress/temps_all_comps_ss.eps}
+    \end{center}
+    \caption{Steady-State solution, four components (fuel kernels, moderating
+    graphite, reflectors, and coolant).}
+    \label{fig:ss_w_o_feedbacks}
+  \end{figure}
+\end{frame}
+
+% --------------------------------------------------------------
+\begin{frame}[fragile]
+\frametitle{Running a Positive Step Insertion Simulation}
+  \begin{figure}[htbp!]
+    \begin{center}
+      \includegraphics[height=0.7\textheight]{./progress/coupled_t_fb_001_pow_rho.eps}
+    \end{center}
+    \caption{Step reactivity insertion of 0.001 $\Delta k$ at 1 s, six components (fuel kernels, moderating graphite annulus, moderating graphite core, reflector pebbles, reflectors, and coolant).}
+    \label{fig:all_comps_temps}
+  \end{figure}
+\end{frame}
+% --------------------------------------------------------------
+\begin{frame}[fragile]
+\frametitle{Running a Positive Step Insertion Simulation}
+  \begin{figure}[htbp!]
+    \begin{center}
+      \includegraphics[height=0.7\textheight]{./progress/coupled_t_fb_001_temps.eps}
+    \end{center}
+    \caption{Step reactivity insertion of 0.001 $\Delta k$ at 1 s, six components (fuel kernels, moderating graphite annulus, moderating graphite core, reflector pebbles, reflectors, and coolant).}
+    \label{fig:all_comps_temps}
+  \end{figure}
+\end{frame}
+
+
+% --------------------------------------------------------------
+\begin{frame}[fragile]
+\frametitle{Running a Negative Step Insertion Simulation}
+  \begin{figure}[htbp!]
+    \begin{center}
+      \includegraphics[height=0.7\textheight]{./progress/neg_01_pow_rho.eps}
+    \end{center}
+    \caption{Negative step reactivity insertion of 0.01 $\Delta k$ at 1 s, six components (fuel kernels, moderating graphite annulus, moderating graphite core, reflector pebbles, reflectors, and coolant).}
+    \label{fig:all_comps_temps}
+  \end{figure}
+\end{frame}
+
+% --------------------------------------------------------------
+\begin{frame}[fragile]
+\frametitle{Running a Negative Step Insertion Simulation}
+  \begin{figure}[htbp!]
+    \begin{center}
+      \includegraphics[height=0.7\textheight]{./progress/neg_01_fuel_temp.eps}
+    \end{center}
+    \caption{Negative step reactivity insertion of 0.01 $\Delta k$ at 1 s, six components (fuel kernels, moderating graphite annulus, moderating graphite core, reflector pebbles, reflectors, and coolant).}
+    \label{fig:all_comps_temps}
+  \end{figure}
+\end{frame}
+
+% --------------------------------------------------------------
+\begin{frame}[fragile]
+\frametitle{Running a Negative Step Insertion Simulation}
+  \begin{figure}[htbp!]
+    \begin{center}
+      \includegraphics[height=0.7\textheight]{./progress/neg_01_zetas.eps}
+    \end{center}
+    \caption{Negative step reactivity insertion of 0.01 $\Delta k$ at 1 s, six components (fuel kernels, moderating graphite annulus, moderating graphite core, reflector pebbles, reflectors, and coolant).}
+    \label{fig:all_comps_temps}
+  \end{figure}
+\end{frame}
+
+
+% --------------------------------------------------------------
+\begin{frame}[fragile]
+\frametitle{Running a Positive Impulse Insertion Simulation}
+  \begin{figure}[htbp!]
+    \begin{center}
+      \includegraphics[height=0.7\textheight]{./progress/coupled_001_impulse_rho.eps}
+    \end{center}
+    \caption{Positive pulse reactivity insertion of 0.001 $\Delta k$ at 1 s, six components (fuel kernels, moderating graphite annulus, moderating graphite core, reflector pebbles, reflectors, and coolant).}
+    \label{fig:all_comps_temps}
+  \end{figure}
+\end{frame}
+
+
+% --------------------------------------------------------------
+\begin{frame}[fragile]
+\frametitle{Running a Positive Impulse Insertion Simulation}
+  \begin{figure}[htbp!]
+    \begin{center}
+      \includegraphics[height=0.7\textheight]{./progress/coupled_001_impulse_pow_and_rho.eps}
+    \end{center}
+    \caption{Positive pulse reactivity insertion of 0.001 $\Delta k$ at 1 s, six components (fuel kernels, moderating graphite annulus, moderating graphite core, reflector pebbles, reflectors, and coolant).}
+    \label{fig:all_comps_temps}
+  \end{figure}
+\end{frame}
+
+
+% --------------------------------------------------------------
+\begin{frame}[fragile]
+\frametitle{Running a Positive Impulse Insertion Simulation}
+  \begin{figure}[htbp!]
+    \begin{center}
+      \includegraphics[height=0.7\textheight]{./progress/coupled_001_impulse_temps.eps}
+    \end{center}
+    \caption{Positive pulse reactivity insertion of 0.001 $\Delta k$ at 1 s, six components (fuel kernels, moderating graphite annulus, moderating graphite core, reflector pebbles, reflectors, and coolant).}
+    \label{fig:all_comps_temps}
+  \end{figure}
 \end{frame}
 
 
